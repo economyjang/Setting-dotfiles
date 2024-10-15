@@ -13,7 +13,7 @@ touch ~/.hushlogin
 
 # Set Fnm and yarn before .zsh setting
 eval "$(fnm env --use-on-cd)"
-fnm install 20.9.0
+fnm install 20.17.0
 npm install --global yarn
 
 
