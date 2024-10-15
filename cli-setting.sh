@@ -5,7 +5,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install Cask
 echo "📦 Installing Fomulars and Casks Using homebrew"
-brew install bat fzf fnm eza go neofetch openjdk@21 portal ripgrep thefuck tree zoxide zsh-autosuggestions zsh-syntax-highlighting starship oven-sh/bun/bun neovim
+brew install bat fzf fnm eza go fastfetch openjdk@21 portal ripgrep thefuck tree zoxide zsh-autosuggestions zsh-syntax-highlighting starship oven-sh/bun/bun neovim
 brew install --cask font-fira-code-nerd-font orbstack google-chrome raycast slack iterm2 notion wezterm beekeeper-studio visual-studio-code
 
 # Set hushlogin
@@ -71,8 +71,7 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 source <(fzf --zsh)
 export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
 
-neofetch
-fortune -s | lolcat
+fastfetch
 EOF
 )
 
