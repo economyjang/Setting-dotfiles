@@ -21,10 +21,6 @@ npm install --global yarn
 touch ~/.zshrc
 
 ZSH_CONTENT=$(cat << 'EOF'
-# Defualt key binding
-bindkey "^[[1;3C" forward-word
-bindkey "^[[1;3D" backward-word
-
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
