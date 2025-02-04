@@ -5,7 +5,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install Cask
 echo "📦 Installing Fomulars and Casks Using homebrew"
-brew install bat fzf fnm eza fastfetch openjdk@21 portal ripgrep thefuck tree zoxide zsh-autosuggestions zsh-syntax-highlighting starship neovim gitmoji
+brew install bat fzf fnm eza fastfetch openjdk@21 portal ripgrep thefuck tree zoxide zsh-autosuggestions zsh-syntax-highlighting starship neovim gitmoji dry fastfetch
 brew install --cask font-d2coding orbstack google-chrome notion slack raycast wezterm chatgpt postman visual-studio-code webstorm termius
 
 # Set hushlogin
@@ -82,6 +82,8 @@ git() {
     command git "$@"
   fi
 }
+
+fastfetch
 EOF
 )
 
