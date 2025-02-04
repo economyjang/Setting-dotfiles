@@ -67,10 +67,16 @@ export STARSHIP_CONFIG=~/.config/starship/starship.toml
 source <(fzf --zsh)
 export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
 
-# git log custom
+# git command custom
 git() {
-  if [[ $1 == "log" ]]; then
-    command git log --all --graph --decorate --oneline --pretty=format:"[%H] %an %s" "${(@)argv[2,-1]}"
+  if [[ $1 == "lg" ]]; then
+    command git log --date=short --pretty=format:"%C(yellow)%h%Creset - %C(cyan)%an%Creset, %C(green)%ad%Creset : %C(magenta)%s%Creset %C(auto)%d%Creset"
+  elif [[ $1 == "br" ]]; then
+    command git branch
+  elif [[ $1 == "co" ]]; then
+    command git checkout "${@:2}"
+  elif [[ $1 == "st" ]]; then
+    command git status
   else
     command git "$@"
   fi
