@@ -5,8 +5,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Install Cask
 echo "📦 Installing Fomulars and Casks Using homebrew"
-brew install bat fzf fnm eza fastfetch openjdk@21 portal ripgrep thefuck tree zoxide zsh-autosuggestions zsh-syntax-highlighting starship neovim
-brew install --cask font-d2coding orbstack google-chrome notion slack raycast wezterm chatgpt postman visual-studio-code webstorm termius spotify
+brew install bat fzf fnm eza fastfetch openjdk@21 portal ripgrep thefuck tree zoxide zsh-autosuggestions zsh-syntax-highlighting starship neovim gitmoji
+brew install --cask font-d2coding orbstack google-chrome notion slack raycast wezterm chatgpt postman visual-studio-code webstorm termius
 
 # Set hushlogin
 touch ~/.hushlogin
@@ -35,6 +35,7 @@ export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 
 # Docker
 alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Status}}'"
+alias dpsp="docker ps --format 'table {{.Names}}\t{{.Ports}}'"
 
 # the Fuck
 eval $(thefuck --alias fuck)
