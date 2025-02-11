@@ -3,13 +3,10 @@ echo "📦 Installing Homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Install Tap
-brew tap homebrew/cask-fonts
-
 # Install Cask
 echo "📦 Installing Fomulars and Casks Using homebrew"
-brew install bat fzf fnm eza fastfetch openjdk@21 portal ripgrep thefuck tree zoxide zsh-autosuggestions zsh-syntax-highlighting starship neovim gitmoji dry fastfetch
-brew install --cask font-d2coding-nerd-font orbstack google-chrome notion slack raycast wezterm chatgpt postman visual-studio-code webstorm termius
+brew install bat fzf fnm eza fastfetch openjdk@21 portal ripgrep thefuck tree zoxide zsh-autosuggestions zsh-syntax-highlighting starship neovim gitmoji dry git
+brew install --cask font-fira-code-nerd-font orbstack google-chrome notion slack raycast wezterm chatgpt postman visual-studio-code webstorm termius telegram
 
 # Set hushlogin
 touch ~/.hushlogin
@@ -19,6 +16,17 @@ eval "$(fnm env --use-on-cd)"
 fnm install 20.17.0
 npm install --global yarn
 
+# FastFetch
+mkdir -p ~/.config/fastfetch
+cp ~/Development/Setting-dotfiles/fastfetch/config.jsonrc ~/.config/fastfetch
+cp ~/Development/Setting-dotfiles/fastfetch/ascii.txt ~/.config/fastfetch
+
+# Starship
+mkdir -p ~/.config/starship
+cp ~/Development/Setting-dotfiles/starship/starship.toml ~/.config/starship
+
+# Wezterm
+cp ~/Development/Setting-dotfiles/wezterm/wezterm.lua ~/.config/.wezterm.lua
 
 # Set .zshrc
 touch ~/.zshrc
@@ -37,8 +45,8 @@ export PATH="$PATH:$(yarn global bin)"
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 
 # Docker
-alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Status}}'"
-alias dpsp="docker ps --format 'table {{.Names}}\t{{.Ports}}'"
+alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}"'
+alias dpsp='docker ps --format "table {{.Names}}\t{{.Ports}}"'
 
 # the Fuck
 eval $(thefuck --alias fuck)

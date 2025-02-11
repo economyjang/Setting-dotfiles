@@ -8,10 +8,9 @@ config = {
 	window_close_confirmation = "NeverPrompt",
 	window_decorations = "RESIZE",
 	default_cursor_style = "BlinkingUnderline",
-	font_size = 11.0,
+	font_size = 14.0,
 	font = term.font("FiraCode Nerd Font Mono"),
 	color_scheme = "Ef-Bio",
-	window_background_opacity = 0.7,
 	text_background_opacity = 1.0,
 	window_padding = {
 		left = 15,
@@ -34,6 +33,11 @@ config = {
 			key = "s",
 			mods = "CTRL",
 			action = term.action.PaneSelect,
+		},
+		{
+			key = "q",
+			mods = "CTRL",
+			action = term.action.CloseCurrentPane { confirm = true },
 		},
 		{
 			key = "H",
