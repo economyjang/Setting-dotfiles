@@ -1,3 +1,8 @@
+# Setup macOS Dock
+defaults write com.apple.dock autohide-time-modifier -float 0.4
+defaults write com.apple.dock autohide-delay -float 0
+killall Dock
+
 # Install homebrew
 echo "📦 Installing Homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -6,7 +11,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # Install Cask
 echo "📦 Installing Fomulars and Casks Using homebrew"
 brew install bat fzf fnm eza fastfetch openjdk@21 portal ripgrep thefuck tree zoxide zsh-autosuggestions zsh-syntax-highlighting starship neovim gitmoji dry git
-brew install --cask font-fira-code-nerd-font orbstack google-chrome notion slack raycast wezterm chatgpt postman visual-studio-code webstorm termius telegram
+brew install --cask font-fira-code-nerd-font orbstack google-chrome notion slack raycast wezterm chatgpt postman visual-studio-code webstorm termius telegram another-redis-desktop-manager beekeeper-studio
 
 # Set hushlogin
 touch ~/.hushlogin
